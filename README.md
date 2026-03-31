@@ -94,6 +94,6 @@ Paid Cloud: GPT-4o, Claude 3.5 Sonnet, Grok 2
 
 ⚠️ Known Limitations
 
-The script is currently optimized for single-file main.cpp execution.
+The script is currently optimized for single-file main.ipynb execution.
 
 Complex Python libraries (like Pandas or NumPy) cannot be directly translated into standard C++ without external C++ libraries. Keep the baseline Python code focused on pure computational logic, math, and standard data structures!
