@@ -57,10 +57,15 @@ Create a file named .env in the root directory of the project and add your API k
 
 # .env file
 OPENAI_API_KEY=sk-your-key-here
+
 ANTHROPIC_API_KEY=sk-ant-your-key-here
+
 GEMINI_API_KEY=AIza-your-key-here
+
 GROK_API_KEY=xai-your-key-here
+
 GROQ_API_KEY=gsk_your-key-here
+
 OPENROUTER_API_KEY=sk-or-your-key-here
 
 
