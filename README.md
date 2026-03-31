@@ -10,8 +10,6 @@ Multi-Model Support (The Industrial Router): Instantly route prompts to Local mo
 
 Interactive Web UI: A clean, symmetrical Gradio interface to view, edit, and manually test Python vs. C++ code side-by-side.
 
-Automated Benchmarking: Run a stress test across all configured AI models at once to generate a C++ Translation Leaderboard, automatically saving results to a .csv file.
-
 Bulletproof Compiler Catching: Safely extracts C++ code from LLM responses, wraps it for compilation, and catches silent Linker/MinGW errors on Windows.
 
 🚀 Setup & Installation
@@ -25,10 +23,10 @@ C++ Compiler: You must have g++ installed. (For Windows users, install MinGW/MSY
 Ollama (Optional but recommended): Required if you want to run local models. Download at ollama.com.
 
 2. Clone the Repository
-
+```
 git clone [https://github.com/YourUsername/cpp-performance-optimizer.git](https://github.com/YourUsername/cpp-performance-optimizer.git)
 cd cpp-performance-optimizer
-
+```
 
 3. Install Python Dependencies
 
@@ -36,26 +34,30 @@ It is highly recommended to use a virtual environment:
 
 python -m venv venv
 # Windows:
-.\venv\Scripts\activate
+```.\venv\Scripts\activate```
 # Mac/Linux:
-source venv/bin/activate
+```source venv/bin/activate```
 
+# Install Relevant packages
+```
 pip install -r requirements.txt
+```
 
 
 4. Setup Local AI Models (Ollama)
 
 If you want to test local offline models, pull them via Ollama:
-
+```
 ollama pull qwen2.5-coder:7b
 ollama pull llama3.1
-
+```
 
 5. Configure API Keys
 
 Create a file named .env in the root directory of the project and add your API keys. All keys are optional—the app will gracefully skip models you don't have keys for!
 
 # .env file
+```
 OPENAI_API_KEY=sk-your-key-here
 
 ANTHROPIC_API_KEY=sk-ant-your-key-here
@@ -67,37 +69,18 @@ GROK_API_KEY=xai-your-key-here
 GROQ_API_KEY=gsk_your-key-here
 
 OPENROUTER_API_KEY=sk-or-your-key-here
-
+```
 
 💻 How to Use
 
-1. The Interactive Web UI
+The Interactive Web UI
 
-To launch the Gradio web interface, run the main optimizer file:
-
-python optimizer.py
-
+To launch the Gradio web interface, simply open and run the main Jupyter Notebook file. You can do this via VS Code by clicking "Run All", or via the command line:
+```
+jupyter notebook main.ipynb
+```
 
 This will open a local web server (usually at http://127.0.0.1:7860). You can type Python code on the left, select an AI model, generate C++ code on the right, and compile/run it to compare execution times.
-
-2. The Automated Benchmark
-
-To run a heavy computational test across every single model in your dictionary and generate a leaderboard:
-
-python benchmark_runner.py
-
-
-This will:
-
-Run a heavy Python baseline script (~10 seconds).
-
-Ask every AI model to translate it into optimized C++.
-
-Compile and run each C++ file.
-
-Verify the math output matches the Python output exactly.
-
-Print a Markdown Leaderboard to your terminal and save llm_benchmark_results.csv.
 
 🤖 Supported Models Configured
 
@@ -107,7 +90,7 @@ Free Cloud: Gemini 2.5 Flash, Llama 3.3 70B (Groq), Llama 3.1 8B (Groq), Gemma 2
 
 Paid Cloud: GPT-4o, Claude 3.5 Sonnet, Grok 2
 
-(You can easily add or remove models by editing the AVAILABLE_MODELS dictionary in optimizer.py!)
+(You can easily add or remove models by editing the AVAILABLE_MODELS dictionary inside main.ipynb!)
 
 ⚠️ Known Limitations
 
