@@ -1,0 +1,30 @@
+Environment Variables (CRITICAL: Keeps your API keys safe!)
+
+.env
+
+Virtual Environments
+
+venv/
+env/
+.venv/
+
+Python Cache
+
+pycache/
+*.py[cod]
+*$py.class
+
+Generated Execution & Benchmark Artifacts
+
+benchmark_script.py
+benchmark_opt.cpp
+benchmark_opt.exe
+benchmark_opt
+compile_and_log.bat
+compile_log.txt
+llm_benchmark_results.csv
+
+OS & Editor Files
+
+.DS_Store
+.vscode/
